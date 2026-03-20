@@ -23,18 +23,18 @@ MVP (v0.1)          v0.5              v1.0              v1.1              v2.0
 
 ### 태스크
 
-- [ ] 프로젝트 세팅 (Vite + React + TypeScript + Tailwind)
-- [ ] `useHangangTemp` 훅 구현 (물정보포털 API 연동)
-- [ ] Vercel Edge Function `/api/kospi` 구현 (Yahoo Finance 프록시)
-- [ ] `useKospi` 훅 구현
-- [ ] `riskCalculator.ts` 위험도/라면지수 계산 로직
-- [ ] `DangerBanner` 컴포넌트 (4단계 컬러 배너)
-- [ ] `MetricCard` 컴포넌트 (수온/코스피 카드)
-- [ ] `RamenIndex` 컴포넌트 (라면 지수 프로그레스 바)
-- [ ] 기본 레이아웃 + 하단 네비게이션
-- [ ] `ShareButton` 컴포넌트 (Web Share API)
-- [ ] Vercel 배포 + 도메인 연결
-- [ ] README 업데이트
+- [x] 프로젝트 세팅 (Vite + React + TypeScript + Tailwind)
+- [x] `useHangangTemp` 훅 구현 (물정보포털 API 연동)
+- [x] Vercel Edge Function `/api/kospi` 구현 (Yahoo Finance 프록시)
+- [x] `useKospi` 훅 구현
+- [x] `riskCalculator.ts` 위험도/라면지수 계산 로직
+- [x] `DangerBanner` 컴포넌트 (4단계 컬러 배너)
+- [x] `MetricCard` 컴포넌트 (수온/코스피 카드)
+- [x] `RamenIndex` 컴포넌트 (라면 지수 프로그레스 바)
+- [x] 기본 레이아웃 + 하단 네비게이션
+- [x] `ShareButton` 컴포넌트 (Web Share API)
+- [ ] Vercel 배포 + 도메인 연결 (pending: Vercel CLI 인증 필요)
+- [x] README 업데이트
 
 **완료 기준:**
 - 실제 수온/코스피 데이터 노출
@@ -50,16 +50,16 @@ MVP (v0.1)          v0.5              v1.0              v1.1              v2.0
 
 ### 태스크
 
-- [ ] `AdUnit.tsx` 컴포넌트 구현
-- [ ] 광고 위치 A 삽입 (판정 결과 하단)
+- [x] `AdUnit.tsx` 컴포넌트 구현
+- [x] 광고 위치 A 삽입 (판정 결과 하단)
 - [ ] 광고 위치 C 삽입 (앵커 배너)
 - [ ] 광고 위치 B 인터스티셜 (위험 단계 트리거)
-- [ ] OG 메타태그 설정 (og:title, og:description, og:image)
-- [ ] `manifest.json` + PWA 아이콘 세트
+- [x] OG 메타태그 설정 (og:title, og:description, og:image)
+- [x] `manifest.json` + PWA 아이콘 세트
 - [ ] Google AdSense 신청
 - [ ] Google Analytics 4 설치
 - [ ] Lighthouse 성능 최적화 (점수 ≥ 85)
-- [ ] `sitemap.xml` 생성
+- [x] `sitemap.xml` 생성
 
 **완료 기준:**
 - AdSense 심사 신청 완료
@@ -74,17 +74,17 @@ MVP (v0.1)          v0.5              v1.0              v1.1              v2.0
 
 ### 태스크
 
-- [ ] `vite-plugin-pwa` 설정 (Workbox)
-- [ ] Service Worker 캐싱 전략 구현
-- [ ] Web Push API 연동 (VAPID 키 생성)
-- [ ] Vercel Edge Function → 푸시 발송 로직
-- [ ] 알림 트리거: 코스피 -3% 감지
-- [ ] 알림 트리거: 수온 10°C 이하
-- [ ] 모닝 브리핑 스케줄 알림 (오전 9시)
-- [ ] 알림 설정 화면 (`Notifications.tsx`, `Settings.tsx`)
+- [x] `vite-plugin-pwa` 설정 (Workbox)
+- [x] Service Worker 캐싱 전략 구현
+- [x] Web Push API 연동 (VAPID 키 생성)
+- [x] Vercel Edge Function → 푸시 발송 로직
+- [x] 알림 트리거: 코스피 -3% 감지
+- [x] 알림 트리거: 수온 10°C 이하
+- [x] 모닝 브리핑 스케줄 알림 (오전 9시)
+- [x] 알림 설정 화면 (`NotificationsPage.tsx`, `SettingsPage.tsx`)
 - [ ] `WeeklyChart.tsx` 7일 이중 축 차트
 - [ ] `historyStorage.ts` 로컬스토리지 누적 저장
-- [ ] 오프라인 모드 + 오프라인 배너
+- [x] 오프라인 모드 + 오프라인 배너
 - [ ] AdSense 승인 후 슬롯 ID 적용
 
 **완료 기준:**

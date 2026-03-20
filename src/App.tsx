@@ -10,6 +10,10 @@ import { RamenIndex } from './components/RamenIndex'
 import { WeeklyChart } from './components/WeeklyChart'
 import { ShareButton } from './components/ShareButton'
 import { BottomNav } from './components/BottomNav'
+import { AdUnit } from './components/AdUnit'
+import { OfflineBanner } from './components/OfflineBanner'
+import { NotificationsPage } from './pages/NotificationsPage'
+import { SettingsPage } from './pages/SettingsPage'
 
 type Tab = 'home' | 'chart' | 'notifications' | 'settings'
 
@@ -63,6 +67,8 @@ export default function App() {
 
   return (
     <div className="min-h-dvh pb-20">
+      <OfflineBanner />
+
       {activeTab === 'home' && (
         <div className="flex flex-col gap-4 p-4">
           {/* Header */}
@@ -97,6 +103,12 @@ export default function App() {
                 temp={temp}
                 kospiRate={kospiRate}
                 ramenCount={risk?.ramenCount ?? 0}
+              />
+
+              {/* Ad Unit A — post-result */}
+              <AdUnit
+                slot={import.meta.env.VITE_ADSENSE_SLOT_A ?? ''}
+                format="auto"
               />
 
               {/* Metric Cards */}
@@ -149,29 +161,9 @@ export default function App() {
         </div>
       )}
 
-      {activeTab === 'notifications' && (
-        <div className="flex flex-col items-center justify-center min-h-[60vh] p-4">
-          <span className="text-4xl mb-4">🔔</span>
-          <h2 className="text-xl font-bold text-slate-300 mb-2">알림 설정</h2>
-          <p className="text-slate-500 text-sm text-center">
-            v1.0에서 출시 예정입니다.
-            <br />
-            coming soon in v1.0
-          </p>
-        </div>
-      )}
+      {activeTab === 'notifications' && <NotificationsPage />}
 
-      {activeTab === 'settings' && (
-        <div className="flex flex-col items-center justify-center min-h-[60vh] p-4">
-          <span className="text-4xl mb-4">⚙️</span>
-          <h2 className="text-xl font-bold text-slate-300 mb-2">설정</h2>
-          <p className="text-slate-500 text-sm text-center">
-            v1.0에서 출시 예정입니다.
-            <br />
-            coming soon in v1.0
-          </p>
-        </div>
-      )}
+      {activeTab === 'settings' && <SettingsPage />}
 
       <BottomNav active={activeTab} onChange={setActiveTab} />
     </div>
