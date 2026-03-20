@@ -1,4 +1,4 @@
-type Tab = 'home' | 'chart' | 'notifications' | 'settings'
+type Tab = 'home' | 'watchlist' | 'chart' | 'settings'
 
 interface BottomNavProps {
   active: Tab
@@ -7,8 +7,8 @@ interface BottomNavProps {
 
 const TABS: { id: Tab; label: string; emoji: string }[] = [
   { id: 'home', label: '홈', emoji: '🏠' },
+  { id: 'watchlist', label: '종목', emoji: '📋' },
   { id: 'chart', label: '차트', emoji: '📊' },
-  { id: 'notifications', label: '알림', emoji: '🔔' },
   { id: 'settings', label: '설정', emoji: '⚙️' },
 ]
 

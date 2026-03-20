@@ -12,10 +12,12 @@ import { ShareButton } from './components/ShareButton'
 import { BottomNav } from './components/BottomNav'
 import { AdUnit } from './components/AdUnit'
 import { OfflineBanner } from './components/OfflineBanner'
-import { NotificationsPage } from './pages/NotificationsPage'
+import { ConsentBanner } from './components/ConsentBanner'
+import { InstallPrompt } from './components/InstallPrompt'
 import { SettingsPage } from './pages/SettingsPage'
+import { WatchlistPage } from './pages/WatchlistPage'
 
-type Tab = 'home' | 'chart' | 'notifications' | 'settings'
+type Tab = 'home' | 'watchlist' | 'chart' | 'settings'
 
 function formatKoreanDate(date: Date): string {
   const year = date.getFullYear()
@@ -68,6 +70,8 @@ export default function App() {
   return (
     <div className="min-h-dvh pb-20">
       <OfflineBanner />
+      <ConsentBanner />
+      <InstallPrompt />
 
       {activeTab === 'home' && (
         <div className="flex flex-col gap-4 p-4">
@@ -152,6 +156,8 @@ export default function App() {
         </div>
       )}
 
+      {activeTab === 'watchlist' && <WatchlistPage />}
+
       {activeTab === 'chart' && (
         <div className="flex flex-col gap-4 p-4">
           <header className="flex items-center pt-2">
@@ -160,8 +166,6 @@ export default function App() {
           <WeeklyChart />
         </div>
       )}
-
-      {activeTab === 'notifications' && <NotificationsPage />}
 
       {activeTab === 'settings' && <SettingsPage />}
 

@@ -22,6 +22,17 @@ const LEVEL_MESSAGE: Record<RiskLevel, string> = {
   danger: '이미 늦었을 수도...',
 }
 
+function buildOgImageUrl(level: string, temp: number | null, rate: number | null, ramen: number): string {
+  const base = 'https://hangang-temp.vercel.app/api/og'
+  const params = new URLSearchParams({
+    level,
+    temp: temp?.toFixed(1) ?? '--',
+    rate: rate?.toFixed(2) ?? '--',
+    ramen: String(ramen),
+  })
+  return `${base}?${params.toString()}`
+}
+
 export function ShareButton({ level, temp, kospiRate, ramenCount }: ShareButtonProps) {
   const [toastVisible, setToastVisible] = useState(false)
 
@@ -41,6 +52,10 @@ export function ShareButton({ level, temp, kospiRate, ramenCount }: ShareButtonP
 
   async function handleShare() {
     const text = buildShareText()
+    const ogImageUrl = buildOgImageUrl(level, temp, kospiRate, ramenCount)
+
+    // Update og:image meta tag dynamically
+    document.querySelector('meta[property="og:image"]')?.setAttribute('content', ogImageUrl)
 
     if (navigator.share !== undefined) {
       try {
